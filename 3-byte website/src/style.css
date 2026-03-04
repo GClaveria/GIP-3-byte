@@ -1,1 +1,19 @@
 @import 'tailwindcss';
+
+.bg-main {
+  background-color: #FDFFF7;
+}
+
+.bg-secondary {
+  background-color: #B4ADEA;
+}
+
+.text-color{
+  color: #50514F;
+}
+
+.accent-color {
+  color: #FF6663;
+}
+
+
