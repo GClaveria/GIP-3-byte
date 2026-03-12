@@ -16,15 +16,14 @@
 /* ---------- FONTS ---------- */
 @font-face {
   font-family: 'SemiCoder';
-  src: url('/fonts/semi_coder/SemiCoder.otf') format('opentype');
+  src: url('/public/fonts/semi_coder/SemiCoder.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Oswald';
-  src: url('/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
+  src: url('/public/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
   font-style: normal;
 }
 
@@ -32,12 +31,14 @@
 
 html { scroll-behavior: smooth }
 
+/* Scroll reveal */
 .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease }
 .reveal.visible { opacity:1; transform:none }
 .d1 { transition-delay:.1s }
 .d2 { transition-delay:.2s }
 .d3 { transition-delay:.3s }
 
+/* Shimmer */
 .btn-shimmer { position:relative; overflow:hidden }
 .btn-shimmer::after {
   content:''; position:absolute; inset:0;
@@ -46,5 +47,6 @@ html { scroll-behavior: smooth }
 }
 .btn-shimmer:hover::after { transform:translateX(100%) }
 
+/* Float animation */
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 .animate-float { animation: float 3s ease-in-out infinite }
