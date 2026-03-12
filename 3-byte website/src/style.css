@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-main:  #fdfff7;
+  --color-sec:   #b4adea;
+  --color-sec-l: #ececec;
+  --color-txt:   #50514f;
+  --color-acc:   #ff6663;
+
+  --font-code: 'SemiCoder', sans-serif;
+  --font-body: 'Oswald', sans-serif;
+
+  --text-2xs: .7rem;
+}
+
+/* ---------- FONTS ---------- */
+@font-face {
+  font-family: 'SemiCoder';
+  src: url('/fonts/semi_coder/SemiCoder.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+:root { --acc-l: rgba(255,102,99,.10) }
+
+html { scroll-behavior: smooth }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease }
+.reveal.visible { opacity:1; transform:none }
+.d1 { transition-delay:.1s }
+.d2 { transition-delay:.2s }
+.d3 { transition-delay:.3s }
+
+.btn-shimmer { position:relative; overflow:hidden }
+.btn-shimmer::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.25) 50%,transparent 60%);
+  transform:translateX(-100%); transition:transform .5s;
+}
+.btn-shimmer:hover::after { transform:translateX(100%) }
+
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+.animate-float { animation: float 3s ease-in-out infinite }

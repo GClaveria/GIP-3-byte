@@ -4,78 +4,86 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>3-byte - Homepage</title>
-  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="stylesheet" href="src/style.css"/>
 </head>
-
-<body>
+<body class="bg-main text-txt overflow-x-hidden font-body">
 
   <!-- NAVBAR -->
-  <header id="navbar">
-    <nav>
-      <a href="#home" class="nav-logo">3-byte</a>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#diensten">Diensten</a></li>
-        <li><a href="#over">Over</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
+    <nav class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+      <a href="#home" class="font-code font-extrabold text-lg text-acc tracking-tight hover:opacity-75 transition-opacity">3-byte</a>
+      <ul class="flex gap-8">
+        <li><a href="#home"      class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Home</a></li>
+        <li><a href="#diensten" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Diensten</a></li>
+        <li><a href="#over"     class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Over</a></li>
+        <li><a href="#contact"  class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="home">
-    <div class="hero-inner">
-      <span class="hero-eyebrow">3-byte · België</span>
-      <h2 class="hero-title">Wij bouwen<span class="accent-color"> digitale</span> ervaringen</h2>
-      <p class="hero-sub">Creativiteit, technologie en design die impact maken — van concept tot lancering.</p>
-      <a href="#contact" class="hero-cta btn-shimmer">Contacteer ons</a>
-    </div>
-      <div class="hero-scroll-line"></div>
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-sec"
+    style="background-image:linear-gradient(rgba(80,81,79,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(80,81,79,.04) 1px,transparent 1px);background-size:40px 40px">
+    <div class="relative z-10 text-center max-w-2xl px-6">
+      <span class="inline-block font-code font-semibold text-2xs tracking-widest uppercase text-acc border-2 border-acc px-4 py-1.5 rounded-full mb-6 bg-main/40 backdrop-blur-sm">3-byte · België</span>
+      <h2 class="font-code font-extrabold leading-none tracking-tight text-txt mb-6 text-[clamp(3.5rem,7vw,5.5rem)]">Wij bouwen<span class="text-acc"> digitale</span> ervaringen</h2>
+      <p class="text-lg max-w-md mx-auto mb-10 leading-relaxed text-txt/70">Creativiteit, technologie en design die impact maken — van concept tot lancering.</p>
+      <a href="#contact" class="btn-shimmer inline-block bg-acc text-white font-code font-bold text-sm tracking-widest uppercase px-8 py-3.5 rounded-full shadow-[0_4px_14px_rgba(255,102,99,.25)] hover:shadow-[0_14px_32px_rgba(255,102,99,.35)] hover:-translate-y-1 transition-all duration-300">Contacteer ons</a>
     </div>
   </section>
 
   <!-- DIENSTEN -->
-  <section id="diensten">
-    <div class="section-inner">
-      <div class="reveal" style="margin-bottom:3.5rem">
-        <p class="section-label">Wat we doen</p>
-        <h3 class="section-title">Onze <span class="accent-color">diensten</span></h3>
+  <section id="diensten" class="py-24 bg-main">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal mb-14">
+        <p class="flex items-center gap-3 font-code font-semibold text-2xs tracking-[.25em] uppercase text-acc mb-3 before:block before:w-8 before:h-px before:bg-acc before:shrink-0">Wat we doen</p>
+        <h3 class="font-code font-extrabold tracking-tight text-txt text-[clamp(2rem,4vw,3.2rem)]">Onze <span class="text-acc">diensten</span></h3>
       </div>
-      <div class="diensten-grid">
-        <div class="reveal d1" style="display:flex;align-items:center">
-          <p class="diensten-intro">Van strategie tot pixel-perfecte uitvoering — wij begeleiden je door het hele digitale traject. Webdesign, development, branding en meer.</p>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="reveal d1 flex items-center">
+          <p class="text-sm leading-loose text-txt/65">Van strategie tot pixel-perfecte uitvoering — wij begeleiden je door het hele digitale traject. Webdesign, development, branding en meer.</p>
         </div>
-        <div class="dienst-tile reveal d2"><span>Webdesign &amp; Dev</span></div>
-        <div class="dienst-tile reveal d3"><span>Branding &amp; Identiteit</span></div>
-        <div class="dienst-tile sm reveal d1"><span>UX / UI Design</span></div>
-        <div class="dienst-tile sm reveal d2"><span>Digitale Strategie</span></div>
-        <div class="dienst-tile sm reveal d3"><span>SEO &amp; Performance</span></div>
+        <div class="reveal d2 relative bg-sec-l border border-transparent rounded-xl min-h-[160px] flex items-center justify-center overflow-hidden cursor-default hover:border-acc hover:shadow-[0_0_0_1px_#ff6663,inset_0_0_24px_var(--acc-l)] hover:-translate-y-1 transition-all duration-300">
+          <span class="relative font-code font-semibold text-2xs tracking-widest uppercase text-txt/40">Webdesign &amp; Dev</span>
+        </div>
+        <div class="reveal d3 relative bg-sec-l border border-transparent rounded-xl min-h-[160px] flex items-center justify-center overflow-hidden cursor-default hover:border-acc hover:shadow-[0_0_0_1px_#ff6663,inset_0_0_24px_var(--acc-l)] hover:-translate-y-1 transition-all duration-300">
+          <span class="relative font-code font-semibold text-2xs tracking-widest uppercase text-txt/40">Branding &amp; Identiteit</span>
+        </div>
+        <div class="reveal d1 relative bg-sec-l border border-transparent rounded-xl min-h-[130px] flex items-center justify-center overflow-hidden cursor-default hover:border-acc hover:shadow-[0_0_0_1px_#ff6663,inset_0_0_24px_var(--acc-l)] hover:-translate-y-1 transition-all duration-300">
+          <span class="relative font-code font-semibold text-2xs tracking-widest uppercase text-txt/40">UX / UI Design</span>
+        </div>
+        <div class="reveal d2 relative bg-sec-l border border-transparent rounded-xl min-h-[130px] flex items-center justify-center overflow-hidden cursor-default hover:border-acc hover:shadow-[0_0_0_1px_#ff6663,inset_0_0_24px_var(--acc-l)] hover:-translate-y-1 transition-all duration-300">
+          <span class="relative font-code font-semibold text-2xs tracking-widest uppercase text-txt/40">Digitale Strategie</span>
+        </div>
+        <div class="reveal d3 relative bg-sec-l border border-transparent rounded-xl min-h-[130px] flex items-center justify-center overflow-hidden cursor-default hover:border-acc hover:shadow-[0_0_0_1px_#ff6663,inset_0_0_24px_var(--acc-l)] hover:-translate-y-1 transition-all duration-300">
+          <span class="relative font-code font-semibold text-2xs tracking-widest uppercase text-txt/40">SEO &amp; Performance</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FEATURES -->
-  <section id="features">
-    <div class="section-inner">
-      <div class="features-grid">
+  <section id="features" class="py-20 bg-main border-b border-txt/[.08]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="feature-card reveal">
-          <div class="feature-icon">⚡</div>
-          <h4>Snel</h4>
-          <p>Geoptimaliseerde code en slimme infrastructuur zorgen voor blazing-fast laadtijden op elk apparaat.</p>
+        <div class="reveal bg-white rounded-2xl p-10 text-center border border-transparent cursor-default shadow-[0_2px_20px_rgba(80,81,79,.07)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(80,81,79,.12)] hover:border-acc/20 transition-all duration-300">
+          <div class="animate-float w-16 h-16 rounded-full flex items-center justify-content-center justify-center text-2xl mx-auto mb-5" style="background:var(--acc-l)">⚡</div>
+          <h4 class="font-code font-bold text-sm tracking-widest uppercase text-txt mb-3">Snel</h4>
+          <p class="text-sm leading-relaxed text-txt/65">Geoptimaliseerde code en slimme infrastructuur zorgen voor blazing-fast laadtijden op elk apparaat.</p>
         </div>
 
-        <div class="feature-card reveal d1">
-          <div class="feature-icon" style="animation-delay:.8s">🤝</div>
-          <h4>Vriendelijk</h4>
-          <p>Directe communicatie en een team dat écht luistert — van eerste gesprek tot oplevering.</p>
-          <a href="#contact" class="btn-outline btn-shimmer">Neem contact op</a>
+        <div class="reveal d1 bg-white rounded-2xl p-10 text-center border border-transparent cursor-default shadow-[0_2px_20px_rgba(80,81,79,.07)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(80,81,79,.12)] hover:border-acc/20 transition-all duration-300">
+          <div class="animate-float w-16 h-16 rounded-full flex items-center justify-center text-2xl mx-auto mb-5" style="background:var(--acc-l);animation-delay:.8s">🤝</div>
+          <h4 class="font-code font-bold text-sm tracking-widest uppercase text-txt mb-3">Vriendelijk</h4>
+          <p class="text-sm leading-relaxed text-txt/65 mb-5">Directe communicatie en een team dat écht luistert — van eerste gesprek tot oplevering.</p>
+          <a href="#contact" class="btn-shimmer inline-block border-2 border-acc text-acc font-code font-semibold text-2xs tracking-widest uppercase px-5 py-2 rounded-full hover:bg-acc hover:text-white transition-all duration-300">Neem contact op</a>
         </div>
 
-        <div class="feature-card reveal d2">
-          <div class="feature-icon" style="animation-delay:1.6s">✦</div>
-          <h4>Knap</h4>
-          <p>Elk detail telt. Wij ontwerpen interfaces die gebruikers verrassen én converteren — mooi én functioneel.</p>
+        <div class="reveal d2 bg-white rounded-2xl p-10 text-center border border-transparent cursor-default shadow-[0_2px_20px_rgba(80,81,79,.07)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(80,81,79,.12)] hover:border-acc/20 transition-all duration-300">
+          <div class="animate-float w-16 h-16 rounded-full flex items-center justify-center text-2xl mx-auto mb-5" style="background:var(--acc-l);animation-delay:1.6s">✦</div>
+          <h4 class="font-code font-bold text-sm tracking-widest uppercase text-txt mb-3">Knap</h4>
+          <p class="text-sm leading-relaxed text-txt/65">Elk detail telt. Wij ontwerpen interfaces die gebruikers verrassen én converteren — mooi én functioneel.</p>
         </div>
 
       </div>
@@ -83,36 +91,36 @@
   </section>
 
   <!-- OVER -->
-  <section id="over">
-    <div class="section-inner">
+  <section id="over" class="py-24 bg-sec">
+    <div class="max-w-5xl mx-auto px-6">
       <div class="reveal">
-        <p class="section-label">Het team</p>
-        <h3 class="section-title">Over <span class="accent-color">ons</span></h3>
+        <p class="flex items-center gap-3 font-code font-semibold text-2xs tracking-[.25em] uppercase text-acc mb-3 before:block before:w-8 before:h-px before:bg-acc before:shrink-0">Het team</p>
+        <h3 class="font-code font-extrabold tracking-tight text-txt text-[clamp(2rem,4vw,3.2rem)]">Over <span class="text-acc">ons</span></h3>
       </div>
-      <p class="over-intro reveal">Wie zijn wij? Een klein maar slagvaardig team van designers, developers en strategen die geloven dat digitale producten zowel mooi als functioneel kunnen zijn.</p>
-      <div class="team-list">
+      <p class="reveal text-sm leading-loose max-w-2xl text-txt/70 mt-4 mb-14">Wie zijn wij? Een klein maar slagvaardig team van designers, developers en strategen die geloven dat digitale producten zowel mooi als functioneel kunnen zijn.</p>
+      <div class="flex flex-col gap-4">
 
-        <div class="team-card reveal">
-          <div class="team-avatar">W</div>
+        <div class="reveal bg-main rounded-2xl p-6 grid grid-cols-[72px_1fr] gap-6 items-center border border-transparent shadow-[0_2px_16px_rgba(80,81,79,.06)] hover:border-acc/30 hover:translate-x-1 hover:shadow-[0_4px_24px_rgba(80,81,79,.1)] transition-all duration-300">
+          <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center font-code font-bold text-xl text-acc shrink-0 border-2 border-acc" style="background:var(--acc-l)">W</div>
           <div>
-            <h4>Gialdino</h4>
-            <p>Project manager &amp; head of communication. Gespecialiseerd in performante webapplicaties en schaalbare architecturen. Bouwt dingen die niet stuk gaan.</p>
+            <h4 class="font-code font-bold text-sm tracking-widest uppercase text-txt mb-1.5">Gialdino</h4>
+            <p class="text-sm leading-relaxed text-txt/65">Project manager &amp; head of communication. Gespecialiseerd in performante webapplicaties en schaalbare architecturen. Bouwt dingen die niet stuk gaan.</p>
           </div>
         </div>
 
-        <div class="team-card reveal d1">
-          <div class="team-avatar">D</div>
+        <div class="reveal d1 bg-main rounded-2xl p-6 grid grid-cols-[72px_1fr] gap-6 items-center border border-transparent shadow-[0_2px_16px_rgba(80,81,79,.06)] hover:border-acc/30 hover:translate-x-1 hover:shadow-[0_4px_24px_rgba(80,81,79,.1)] transition-all duration-300">
+          <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center font-code font-bold text-xl text-acc shrink-0 border-2 border-acc" style="background:var(--acc-l)">D</div>
           <div>
-            <h4>Alessandro</h4>
-            <p>Creative director &amp; designer. Vertaalt merkidentiteiten naar visuele systemen die resoneren. Obsessief op zoek naar het perfecte detail.</p>
+            <h4 class="font-code font-bold text-sm tracking-widest uppercase text-txt mb-1.5">Alessandro</h4>
+            <p class="text-sm leading-relaxed text-txt/65">Creative director &amp; designer. Vertaalt merkidentiteiten naar visuele systemen die resoneren. Obsessief op zoek naar het perfecte detail.</p>
           </div>
         </div>
 
-        <div class="team-card reveal d2">
-          <div class="team-avatar">A</div>
+        <div class="reveal d2 bg-main rounded-2xl p-6 grid grid-cols-[72px_1fr] gap-6 items-center border border-transparent shadow-[0_2px_16px_rgba(80,81,79,.06)] hover:border-acc/30 hover:translate-x-1 hover:shadow-[0_4px_24px_rgba(80,81,79,.1)] transition-all duration-300">
+          <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center font-code font-bold text-xl text-acc shrink-0 border-2 border-acc" style="background:var(--acc-l)">A</div>
           <div>
-            <h4>Ward</h4>
-            <p>Lead back-end developer. Houdt het hoofd koel als de deadline nadert en zorgt dat elke oplevering on time en on budget is.</p>
+            <h4 class="font-code font-bold text-sm tracking-widest uppercase text-txt mb-1.5">Ward</h4>
+            <p class="text-sm leading-relaxed text-txt/65">Lead back-end developer. Houdt het hoofd koel als de deadline nadert en zorgt dat elke oplevering on time en on budget is.</p>
           </div>
         </div>
 
@@ -121,39 +129,39 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-inner">
-      <div class="contact-grid">
+  <section id="contact" class="py-24 bg-main">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
         <div class="reveal">
-          <p class="section-label">Kom in contact</p>
-          <h2 class="contact-title">Zin om <em>af te spreken</em>?</h2>
-          <p class="contact-sub">Vertel ons over je project. We reageren binnen één werkdag.</p>
+          <p class="flex items-center gap-3 font-code font-semibold text-2xs tracking-[.25em] uppercase text-acc mb-3 before:block before:w-8 before:h-px before:bg-acc before:shrink-0">Kom in contact</p>
+          <h2 class="font-code font-extrabold tracking-tight leading-[1.15] text-txt text-[clamp(2rem,4vw,3.2rem)] mb-4">Zin om <em class="not-italic text-acc">af te spreken</em>?</h2>
+          <p class="text-sm leading-loose text-txt/65">Vertel ons over je project. We reageren binnen één werkdag.</p>
         </div>
 
-        <form class="contact-form reveal d1" onsubmit="return false">
-          <div class="form-group">
-            <label>Naam *</label>
-            <input type="text" placeholder="Jouw naam">
+        <form class="reveal d1 grid grid-cols-2 gap-4" onsubmit="return false">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Naam *</label>
+            <input type="text" placeholder="Jouw naam" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
-          <div class="form-group">
-            <label>Achternaam</label>
-            <input type="text" placeholder="Achternaam">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Achternaam</label>
+            <input type="text" placeholder="Achternaam" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
-          <div class="form-group">
-            <label>E-mail *</label>
-            <input type="email" placeholder="jij@bedrijf.be">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">E-mail *</label>
+            <input type="email" placeholder="jij@bedrijf.be" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
-          <div class="form-group">
-            <label>Datum</label>
-            <input type="date">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Datum</label>
+            <input type="date" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
-          <div class="form-group full">
-            <label>Bericht</label>
-            <textarea rows="4" placeholder="Vertel ons over je project…"></textarea>
+          <div class="col-span-2 flex flex-col gap-1.5">
+            <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Bericht</label>
+            <textarea rows="4" placeholder="Vertel ons over je project…" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all resize-y"></textarea>
           </div>
-          <div class="form-group full">
-            <button type="submit" class="btn-primary btn-shimmer">Verstuur</button>
+          <div class="col-span-2">
+            <button type="submit" class="btn-shimmer block w-full bg-acc text-white font-code font-bold text-sm tracking-widest uppercase px-8 py-3.5 rounded-full border-none cursor-pointer shadow-[0_4px_14px_rgba(255,102,99,.25)] hover:shadow-[0_10px_28px_rgba(255,102,99,.35)] hover:-translate-y-0.5 transition-all duration-300">Verstuur</button>
           </div>
         </form>
 
@@ -162,14 +170,13 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="section-inner">
-      <span class="footer-logo">3-byte</span>
-      <p>© 2026 3-byte. Alle rechten voorbehouden.</p>
+  <footer class="py-6 bg-sec border-t border-txt/10">
+    <div class="max-w-5xl mx-auto px-6 flex items-center justify-between">
+      <span class="font-code font-extrabold text-lg text-acc">3-byte</span>
+      <p class="text-sm text-txt/55">© 2026 3-byte. Alle rechten voorbehouden.</p>
     </div>
   </footer>
 
-  <script type="module" src="/src/main.js"></script>
   <script>
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -177,7 +184,8 @@
       navbar.style.background     = s ? 'rgba(253,255,247,.85)' : 'transparent';
       navbar.style.backdropFilter = s ? 'blur(16px)' : 'none';
       navbar.style.borderBottom   = s ? '1px solid rgba(80,81,79,.08)' : 'none';
-      navbar.style.padding        = s ? '.75rem 0' : '1.25rem 0';
+      navbar.style.paddingTop     = s ? '.75rem' : '1.25rem';
+      navbar.style.paddingBottom  = s ? '.75rem' : '1.25rem';
     });
 
     const io = new IntersectionObserver(entries => {
@@ -185,8 +193,6 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
-
-  <script type="module" src="/src/main.js"></script>
 
 </body>
 </html>
