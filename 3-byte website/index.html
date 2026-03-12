@@ -192,13 +192,52 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="py-6 bg-sec border-t border-txt/10">
-    <div class="max-w-5xl mx-auto px-6 flex items-center justify-between">
-      <span class="font-code font-extrabold text-lg text-acc">3-byte</span>
-      <p class="text-sm text-txt/55">© 2026 3-byte. Alle rechten voorbehouden.</p>
+<!-- FOOTER -->
+<footer class="bg-sec pt-10 pb-5 text-[15px] leading-6 text-[#737373]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 mb-8">
+
+      <!-- About -->
+      <div>
+        <h6 class="text-acc text-base uppercase tracking-[2px] font-semibold mb-3">Over Ons</h6>
+        <p class="text-justify">
+          Hier komt de uitleg over wie we zijn en wat we doen of eventueel ons logo
+        </p>
+      </div>
+
+      <!-- Categories -->
+      <div>
+        <h6 class="text-acc text-base uppercase tracking-[2px] font-semibold mb-3">Links</h6>
+        <ul class="space-y-1 list-none p-0">
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Voorbeeld 1</a></li>
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Voorbeeld 2</a></li>
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Voorbeeld 3</a></li>
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Voorbeeld 4</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h6 class="text-acc text-base uppercase tracking-[2px] font-semibold mb-3">Contact</h6>
+        <ul class="space-y-1 list-none p-0">
+          <li><a href="#contact" class="text-[#737373] hover:text-[#3366cc] transition-colors">Over Ons</a></li>
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Contact Us</a></li>
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Contribute</a></li>
+          <li><a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+
+    <hr class="border-t border-[#bbb]/50 mb-5">
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <p class="m-0">
+        Copyright &copy; 2026 All Rights Reserved by <a href="#" class="text-[#737373] hover:text-[#3366cc] transition-colors">3-byte</a>.
+      </p>
+    </div>
+  </div>
+</footer>
 
   <script>
     const navbar = document.getElementById('navbar');
