@@ -16,14 +16,14 @@
 /* ---------- FONTS ---------- */
 @font-face {
   font-family: 'SemiCoder';
-  src: url('/public/fonts/semi_coder/SemiCoder.ttf') format('truetype');
+  src: url('/fonts/semi_coder/SemiCoder.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Oswald';
-  src: url('/public/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
   font-style: normal;
 }
 
