@@ -50,3 +50,16 @@ html { scroll-behavior: smooth }
 /* Float animation */
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 .animate-float { animation: float 3s ease-in-out infinite }
+
+#menu-btn span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: #50514f;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+#menu-btn.open span {
+  opacity: 0;
+  transform: scaleX(0);
+}

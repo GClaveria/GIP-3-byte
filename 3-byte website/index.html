@@ -9,20 +9,32 @@
 <body class="bg-main text-txt overflow-x-hidden font-body">
 
   <!-- NAVBAR -->
-  <header id="navbar" class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
-    <nav class="max-w-5xl mx-auto px-6 flex justify-between items-center">
-      <a href="#home" class="font-code font-extrabold text-lg text-acc tracking-tight hover:opacity-75 transition-opacity">3-byte</a>
-      <ul class="flex gap-10">
-        <li><a href="#home" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Home</a></li>
-        <li><a href="#diensten" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Diensten</a></li>
-        <li><a href="#plan-van-aanpak" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Plan van aanpak</a></li>
-        <li><a href="#over" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Over</a></li>
-        <li><a href="#contact" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Contact</a></li>
-        <li><a href="#faq" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
+  <nav class="max-w-5xl mx-auto px-6 flex justify-between items-center">
 
+    <a href="#home" class="font-code font-extrabold text-lg text-acc tracking-tight hover:opacity-75 transition-opacity">
+      3-byte
+    </a>
+
+    <!-- Hamburger -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+      <span class="w-6 h-[2px] bg-txt"></span>
+      <span class="w-6 h-[2px] bg-txt"></span>
+      <span class="w-6 h-[2px] bg-txt"></span>
+    </button>
+
+    <!-- Menu -->
+    <ul id="menu" class="hidden md:flex gap-10">
+      <li><a href="#home" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Home</a></li>
+      <li><a href="#diensten" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Diensten</a></li>
+      <li><a href="#plan-van-aanpak" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Plan van aanpak</a></li>
+      <li><a href="#over" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Over</a></li>
+      <li><a href="#contact" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Contact</a></li>
+      <li><a href="#faq" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">FAQ</a></li>
+    </ul>
+
+  </nav>
+</header>
   <!-- HERO -->
   <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-sec"
     style="background-image:linear-gradient(rgba(80,81,79,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(80,81,79,.04) 1px,transparent 1px);background-size:40px 40px">
@@ -375,6 +387,26 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const isOpen = !menu.classList.contains('hidden');
+        menuBtn.classList.toggle('open', isOpen);
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menuBtn.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
 
 </body>
