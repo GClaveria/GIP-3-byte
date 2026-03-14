@@ -17,7 +17,7 @@
     </a>
 
     <!-- Hamburger -->
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
       <span class="w-6 h-[2px] bg-txt"></span>
       <span class="w-6 h-[2px] bg-txt"></span>
       <span class="w-6 h-[2px] bg-txt"></span>
@@ -31,6 +31,11 @@
       <li><a href="#over" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Over</a></li>
       <li><a href="#contact" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">Contact</a></li>
       <li><a href="#faq" class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/60 hover:text-txt transition-colors">FAQ</a></li>
+      <li class="md:hidden">
+        <button id="menu-close-btn" type="button" class="font-code font-semibold text-2xs tracking-widest uppercase text-acc hover:text-txt transition-colors">
+          Sluit menu
+        </button>
+      </li>
     </ul>
 
   </nav>
@@ -390,6 +395,7 @@
 
     const menuBtn = document.getElementById('menu-btn');
     const menu = document.getElementById('menu');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
 
     if (menuBtn && menu) {
       menuBtn.addEventListener('click', () => {
@@ -398,6 +404,14 @@
         menuBtn.classList.toggle('open', isOpen);
         menuBtn.setAttribute('aria-expanded', String(isOpen));
       });
+
+      if (menuCloseBtn) {
+        menuCloseBtn.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menuBtn.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
 
       menu.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
