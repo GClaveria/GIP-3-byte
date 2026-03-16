@@ -31,3 +31,4 @@ jobs:
           key: ${{ secrets.PLESK_SSH_KEY }}
           source: "dist/*"
           target: "/var/www/vhosts/3-byte.minoffice.be/httpdocs"
+          strip_components: 1 
