@@ -5,7 +5,9 @@ export default defineConfig({
   plugins: [
     tailwindcss()
   ],
-  server: {
+  server: {    
     open: true
-  }
+  },
+  base: './'
 })
+
