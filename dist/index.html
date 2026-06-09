@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>3-byte - Homepage</title>
   <link rel="icon" href="./assets/logo-Dz5luIpC.png" type="image/png"/>
-  <link rel="stylesheet" crossorigin href="./assets/index-DkK93pX2.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-C9nELzFz.css">
 </head>
 <body class="bg-main text-txt overflow-x-hidden font-body">
 
@@ -263,30 +263,32 @@
           <h2 class="font-code font-extrabold tracking-tight leading-[1.15] text-txt text-[clamp(2rem,4vw,3.2rem)] mb-4">Zin om <em class="not-italic text-acc">af te spreken</em>?</h2>
           <p class="text-sm leading-loose text-txt/65">Vertel ons over je project. We reageren binnen één werkdag.</p>
         </div>
-        <form class="reveal d1 grid grid-cols-2 gap-4" onsubmit="return false">
+        <form id="contact-form" class="reveal d1 grid grid-cols-2 gap-4" action="https://formspree.io/f/xpqerypq" method="POST">
+          <input type="hidden" name="_replyto" value="alessandrowauters2@gmail.com"/>
           <div class="flex flex-col gap-1.5">
             <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Naam *</label>
-            <input type="text" placeholder="Jouw naam" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
+            <input type="text" name="naam" required placeholder="Jouw naam" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
           <div class="flex flex-col gap-1.5">
             <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Achternaam</label>
-            <input type="text" placeholder="Achternaam" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
+            <input type="text" name="achternaam" placeholder="Achternaam" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
           <div class="flex flex-col gap-1.5">
             <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">E-mail *</label>
-            <input type="email" placeholder="jij@bedrijf.be" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
+            <input type="email" name="email" required placeholder="jij@bedrijf.be" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
           <div class="flex flex-col gap-1.5">
             <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Datum</label>
-            <input type="date" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
+            <input type="date" name="datum" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all"/>
           </div>
           <div class="col-span-2 flex flex-col gap-1.5">
             <label class="font-code font-semibold text-2xs tracking-widest uppercase text-txt/50">Bericht</label>
-            <textarea rows="4" placeholder="Vertel ons over je project…" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all resize-y"></textarea>
+            <textarea rows="4" name="bericht" placeholder="Vertel ons over je project…" class="w-full bg-white border border-txt/15 rounded-lg px-4 py-2.5 text-sm text-txt placeholder:text-txt/30 focus:outline-none focus:border-acc focus:shadow-[0_0_0_3px_var(--acc-l)] transition-all resize-y"></textarea>
           </div>
           <div class="col-span-2">
-            <button type="submit" class="btn-shimmer block w-full bg-acc text-white font-code font-bold text-sm tracking-widest uppercase px-8 py-3.5 rounded-full border-none cursor-pointer shadow-[0_4px_14px_rgba(255,102,99,.25)] hover:shadow-[0_10px_28px_rgba(255,102,99,.35)] hover:-translate-y-0.5 transition-all duration-300">Verstuur</button>
+            <button id="submit-btn" type="submit" class="btn-shimmer block w-full bg-acc text-white font-code font-bold text-sm tracking-widest uppercase px-8 py-3.5 rounded-full border-none cursor-pointer shadow-[0_4px_14px_rgba(255,102,99,.25)] hover:shadow-[0_10px_28px_rgba(255,102,99,.35)] hover:-translate-y-0.5 transition-all duration-300">Verstuur</button>
           </div>
+          <div id="form-msg" class="col-span-2 hidden text-center font-code text-sm py-2 rounded-lg"></div>
         </form>
       </div>
     </div>
@@ -418,7 +420,40 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    const menuBtn = document.getElementById('menu-btn');
+    const contactForm = document.getElementById('contact-form');
+    const formMsg = document.getElementById('form-msg');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Versturen…';
+
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            formMsg.textContent = '✓ Bericht verstuurd! We nemen snel contact op.';
+            formMsg.className = 'col-span-2 text-center font-code texnnvgwgxt-sm py-2 rounded-lg text-green-700 bg-green-50';
+            contactForm.reset();
+            submitBtn.textContent = 'Verstuurd';
+          } else {
+            throw new Error();
+          }
+        } catch {
+          formMsg.textContent = '✗ Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks.';
+          formMsg.className = 'col-span-2 text-center font-code text-sm py-2 rounded-lg text-red-700 bg-red-50';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Verstuur';
+        }
+      });
+    }
+
     const menu = document.getElementById('menu');
     const menuCloseBtn = document.getElementById('menu-close-btn');
 
